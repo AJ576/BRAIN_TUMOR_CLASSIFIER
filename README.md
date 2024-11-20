@@ -49,6 +49,8 @@ Brain tumors pose a significant health challenge, requiring accurate and efficie
 This project was completed in collaboration with:  
 - Aditya Jha
 - Guillermo Marr
+- Arushi Ravula
 
 - [Aditya Jha](aditya.jha2020123@gmail.com)
 - [Guillermo Marr](guillermomarr3@gmail.com)
+- [Arushi Ravula](arushi.ravula@gmail.com)
