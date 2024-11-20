@@ -55,4 +55,4 @@ This project was completed in collaboration with:
 - [Aditya Jha](aditya.jha2020123@gmail.com)
 - [Guillermo Marr](guillermomarr3@gmail.com)
 - [Arushi Ravula](arushi.ravula@gmail.com)
-- [Madina Monowara](monowaram9@gmail.com)
+- [Madina Monowara](https://github.com/madinamonowara)
