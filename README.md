@@ -2,11 +2,8 @@
 
 (UPDATE IN README.md)
 This is a Convolutional Nueral Network model that is able to predict brain tumor and classify it, by employing advanced machine learning techniques such as a cyclic learning model that varies the lerning rate every few epochs and image preprocessing techniques
-*EXAMPLE:*
-*Uncovered and meticulously analyzed three distinct biases present in ChatGPT, employing advanced Python techniques and data analysis methodologies, all within AI4ALL's cutting-edge AI4ALL Ignite accelerator.*
 
-
-## Problem Statement <!--- do not change this line -->
+## Problem Statement 
 
 (UPDATE IN README.md)
 Describe the motivation for this project, why it is relevant, and what its impacts are.
