@@ -1,54 +1,117 @@
-# Brain Tumor Classification  
+# Brain Tumor Classifier
 
-This is a Convolutional Neural Network model that predicts and classifies brain tumors. The model leverages advanced machine learning techniques, including a cyclic learning rate schedule, and applies image preprocessing to improve classification accuracy.  
+A full-stack application for classifying brain tumors from MRI images using deep learning.
 
----
+## Project Structure
 
-## Problem Statement  
+```
+BRAIN_TUMOR_CLASSIFIER/
+├── backend/                 # Python FastAPI backend
+│   ├── api/
+│   │   └── main.py         # FastAPI application
+│   ├── model_epoch_18.pth  # Trained PyTorch model
+│   ├── the_best_cyclic_algorithm.py  # Model architecture
+│   ├── requirements.txt    # Python dependencies
+│   └── MRI/                # Training and testing data
+└── frontend/               # React frontend
+    ├── src/
+    ├── public/
+    └── package.json
+```
 
-Brain tumors pose a significant health challenge, requiring accurate and efficient diagnostic tools. The goal of this project is to develop an automated classification system for brain tumors using MRI images, aiming to assist medical professionals in early detection and accurate diagnosis.  
+## Features
 
----
+- **Deep Learning Model**: Custom CNN architecture trained on brain MRI images
+- **4 Classification Types**:
+  - Glioma Tumor
+  - Meningioma Tumor
+  - No Tumor
+  - Pituitary Tumor
+- **Modern UI**: React-based frontend with professional design
+- **REST API**: FastAPI backend with proper error handling
+- **Real-time Predictions**: Upload image and get instant classification results
 
-## Key Results  
+## Setup Instructions
 
-1. Achieved **95% accuracy** when excluding glioma predictions.  
-2. Overall model accuracy: **75%**, with glioma being the most challenging tumor type to classify.  
-3. Efficient deployment of the model through Streamlit, enabling real-time image classification.  
+### Backend Setup
 
----
+1. Navigate to the backend directory:
+```bash
+cd backend
+```
 
-## Methodologies  
+2. Create a virtual environment (recommended):
+```bash
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+```
 
-1. Trained a Convolutional Neural Network (CNN) with **cyclic learning rate scheduling** to improve convergence.  
-2. Preprocessed MRI images using resizing and normalization techniques.  
-3. Utilized **class-based accuracy evaluation** to identify model weaknesses, such as difficulties with glioma classification.  
-4. Deployed the trained model using **Streamlit** for interactive image classification.  
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
----
+4. Start the FastAPI server:
+```bash
+cd api
+python main.py
+```
 
-## Data Sources  
+The backend will be available at `http://localhost:8000`
 
-- Dataset used: [Kaggle Brain MRI Images](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
+### Frontend Setup
 
----
+1. Navigate to the frontend directory:
+```bash
+cd frontend
+```
 
-## Technologies Used  
+2. Install dependencies:
+```bash
+npm install
+```
 
-- **Python**  
-  - NumPy, pandas  
-  - PyTorch (for model training and evaluation)  
-  - Matplotlib (for confusion matrix visualization)  
-- **Streamlit** (for deployment as an interactive app)  
-- **Google Colab** (for training and experimentation)  
+3. Start the React development server:
+```bash
+npm start
+```
 
----
+The frontend will be available at `http://localhost:3000`
 
-## Authors  
+## API Endpoints
 
-This project was completed in collaboration with:  
+- `GET /` - Health check
+- `GET /health` - Detailed health status
+- `POST /predict` - Upload image and get tumor classification
 
-- [Aditya Jha](https://github.com/AJ576)
-- [Guillermo Marr](https://github.com/Gmo3)
-- [Arushi Ravula](https://github.com/ArushiRav)
-- [Madina Monowara](https://github.com/madinamonowara)
+## Model Performance
+
+The model was trained using a cyclic learning rate schedule and achieves high accuracy on the test dataset. The model uses ELU activation functions and includes dropout for regularization.
+
+## Technologies Used
+
+### Backend
+- FastAPI
+- PyTorch
+- Pillow (PIL)
+- Uvicorn
+
+### Frontend
+- React
+- TypeScript
+- CSS3
+- Axios
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.

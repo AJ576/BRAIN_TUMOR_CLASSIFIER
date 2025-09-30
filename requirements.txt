@@ -1,9 +1,0 @@
-torch
-torchvision
-Pillow
-streamlit
-scikit-learn
-numpy
-pandas
-matplotlib
-tensorboard
