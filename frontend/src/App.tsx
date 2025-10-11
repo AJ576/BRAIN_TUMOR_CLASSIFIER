@@ -59,8 +59,16 @@ function App() {
     formData.append('file', selectedFile);
 
     try {
+      // Use environment variable if provided, otherwise fall back to Render URL
+      const API_BASE = (process.env.REACT_APP_API_URL && process.env.REACT_APP_API_URL.trim() !== "")
+        ? process.env.REACT_APP_API_URL
+        : 'https://brain-tumor-classifier-qrb1.onrender.com';
+
+      // Ensure no trailing slash and append /predict
+      const apiUrl = `${API_BASE.replace(/\/$/, '')}/predict`;
+
       const response = await axios.post<PredictionResult>(
-        'http://localhost:8000/predict',
+        apiUrl,
         formData,
         {
           headers: {
@@ -70,7 +78,10 @@ function App() {
       );
       setPrediction(response.data);
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'An error occurred during prediction');
+      // More robust error message for network errors
+      if (err.response?.data?.detail) setError(err.response.data.detail);
+      else if (err.response) setError(`Server error: ${err.response.status} ${err.response.statusText}`);
+      else setError(err.message || 'An error occurred during prediction');
     } finally {
       setLoading(false);
     }
